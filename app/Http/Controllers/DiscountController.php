@@ -43,7 +43,7 @@ $price_rules = array(
     //     $price_rule = "";
     //   dd($result['body']);
 $price_rule_id =$result['body']->container['price_rule']['id'];
-$n = 5;
+$n = 10;
 function getName($n) {
     $characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
     $randomString = '';

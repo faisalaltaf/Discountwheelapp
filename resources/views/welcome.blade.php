@@ -1,6 +1,8 @@
 @extends('shopify-app::layouts.default')
 
 @section('content')
+
+
     <!-- You are: (shop domain name) -->
     <!-- <p>You are: {{ $shopDomain ?? Auth::user()->name }}</p> -->
     <meta name="csrf-token" content="{{ csrf_token() }}" />
@@ -15,14 +17,36 @@
 
       <div class="ml-auto navbar-text actions">
           <ul class="nav navbar-nav nav-right">
-              <li class="nav-item"><a class="nav-link" href="index.html">Create Short URL</a></li>
-              <li class="nav-item"><a class="nav-link" href="{{route('discountpromocode')}}">Pop up & Wheel</a></li>
-              <li class="nav-item"><a class="nav-link" href="subscribe.html">Subscribers</a></li>
-              <li class="nav-item"><a class="nav-link" href="analytics.html">Analytics</a></li>
-            </ul>
-        </div>
-    </div>
-</nav>
+            <tr>
+              
+              <td>
+                </td>
+              </tr>
+              
+              <li class="nav-item"><a class="nav-link" href="index.html">Create Short URL</a>
+              
+                </li>
+                  <li class="nav-item"><a class="nav-link" href="{{route('wheelpop')}}">Pop up & Wheel</a></li>
+                  <li class="nav-item"><a class="nav-link" href="subscribe.html">Subscribers</a></li>
+                  <li class="nav-item"><a class="nav-link" href="{{route('discountpromocode')}}">Code Coupen</a></li>
+                  <li class="nav-item"><a class="nav-link">
+
+                  @foreach($actives as $active)
+                  
+                      
+                     
+                        <input data-id="{{$active->id}}" class="toggle-class" type="checkbox" data-onstyle="success" data-offstyle="danger" data-toggle="toggle" data-on="Active" data-off="InActive" {{ $active->status ? 'checked' : '' }}>
+                     
+                  
+ @endforeach
+
+
+                  </a></li>
+                
+                </ul>
+              </div>
+            </div>
+          </nav>
 
 
 <div class="container embed_form mt-4">
@@ -120,7 +144,7 @@
 
 @section('scripts')
     @parent
-
+    
     <script>
         actions.TitleBar.create(app, { title: 'Welcome' });
     </script>
@@ -129,7 +153,7 @@
 <script>
 
   $("#submit1").click(function(event){
-      event.preventDefault();
+    event.preventDefault();
       let select = $('#aioConceptName').find(":selected").text();
       let price = $("input[name=price]").val();
       let offername = $("input[name=offername]").val();
@@ -158,4 +182,28 @@
        });
   });
 </script>
+
+<script>
+$(function() {
+    $('.toggle-class').change(function() {
+        var status = $(this).prop('checked') == true ? 1 : 0; 
+        var id = $(this).data('id'); 
+         
+        $.ajax({
+            type: "GET",
+            dataType: "json",
+            url: '/changeStatus',
+            data: {'status': status, 'id': id},
+            success: function(data){
+              
+            }
+        });
+    })
+  })
+
+
+
+</script>
+
+
 @endsection

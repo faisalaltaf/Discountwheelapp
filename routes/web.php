@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use GuzzleHttp\Middleware;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\DiscountController;
+use App\Http\Controllers\ActiveController;
 
 /*
 |--------------------------------------------------------------------------
@@ -34,3 +35,7 @@ Route::get('/login', function () {
 
 Route::post('/discount','DiscountController@discount')->middleware(['verify.shopify'])->name('discount');
 Route::get('/discountpromocode','DiscountController@showpromocode')->middleware(['verify.shopify'])->name('discountpromocode');
+Route::view('/wheelpop','discountcode.wheeldiscount')->middleware(['verify.shopify'])->name('wheelpop');
+Route::get('/status','ActiveController@index')->middleware('verify.shopify')->name('status');
+
+Route::get('/changeStatus','ActiveController@changeUserStatus')->middleware('verify.shopify');
