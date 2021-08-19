@@ -1,0 +1,148 @@
+
+ 
+
+  #tab-box-front-0.tab-box .tab-icon svg {
+    width: 32px;
+    height: 32px;
+    top: calc(50% - 16px);
+    left: calc(50% - 16px);
+}
+  .cart-popup {
+    box-shadow: 1px 1px 10px 2px rgba(235, 235, 235, 0.5);
+  }
+    .discountly_wlo_codebar.bottom_floating {
+        bottom: 0;
+    }
+    .discountly_wlo_codebar.top_floating, .discountly_wlo_codebar.bottom_floating {
+        position: fixed;
+        left: 0;
+        right: 0;
+        z-index: 2000000000;
+        z-index: 2147483647;
+    }
+    .discountly_wlo_codebar {
+        position: relative;
+        margin: 0;
+        width: 100%;
+        box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        -webkit-box-sizing: border-box;
+        padding: 10px;
+        font-size: 14px !important;
+        font-family: "Roboto", sans-serif !important;
+        background-color: #49a3af;
+        color: #fff;
+        cursor: default;
+            padding: 10px;
+    }
+    .discountly_wlo_codebar .discountly_wlo_bar_text {
+        filter: alpha(opactiy=80);
+        -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=80)";
+        -moz-opacity: .8;
+        -khtml-opacity: .8;
+        opacity: .8;
+        color: inherit;
+    }
+    .discountly_wlo_codebar div, .discountly_wlo_codebar .discountly_wcb_div {
+        display: inline-block;
+        margin: 0;
+        margin: 5px;
+        cursor: default !important;
+        line-height: 22px !important;
+        margin-top: 5px;
+    }
+    .discountly_wlo_codebar .discountly_wlo_code_cupon {
+        box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        -webkit-box-sizing: border-box;
+        padding: 3px 30px 3px 20px;
+        width: auto;
+        font-family: "Roboto", sans-serif;
+        background-color: transparent;
+        border-radius: 2px;
+        font-size: 14px;
+        letter-spacing: 1px;
+        margin-left: 12px;
+        border: 1px dashed rgba(255,255,255,0.3);
+        color: inherit;
+        cursor: text !important;
+    }
+    .discountly_wlo_codebar div, .discountly_wlo_codebar .discountly_wcb_div {
+        display: inline-block;
+        margin: 0;
+        margin-left: 5px;
+        cursor: default !important;
+        line-height: 22px !important;
+    }
+    .discountly_wlo_codebar .wlo_mobile_br {
+        display: none;
+    }
+    .discountly_wlo_codebar .discountly_wlo_close_btn {
+        background-color: rgba(0,0,0,0.3);
+        border-radius: 30px;
+        float: right;
+        padding: 4px 10px;
+        cursor: pointer !important;
+    }
+    .discountly_wlo_codebar .discountly_wlo_close_btn.discountly_wlo_mobile_only {
+        display: none;
+    }
+    .discountly_wlo_codebar .discountly_wlo_bar_text {
+        filter: alpha(opactiy=80);
+        -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=80)";
+        -moz-opacity: .8;
+        -khtml-opacity: .8;
+        opacity: .8;
+        color: inherit;
+    }
+    .discountly_wlo_codebar .discountly_wlo_counter {
+        background-color: rgba(255,255,255,0.2);
+        padding: 4px 8px;
+        border-radius: 4px;
+        letter-spacing: 1px;
+        color: inherit;
+    }
+    .discountly_wlo_codebar .discountly_wlo_counter {
+        background-color: rgba(255,255,255,0.2);
+        padding: 4px 8px;
+        border-radius: 4px;
+        letter-spacing: 1px;
+        color: inherit;
+    }
+    /* Tool tip css */
+    .discountly_tooltip {
+        position: relative;
+        display: inline-block;
+        border-bottom: 1px dotted black;
+    }
+    
+    .discountly_tooltip .discountly_tooltiptext {
+        visibility: hidden;
+        width: 120px;
+        background-color: #312f2f;
+        color: #fff;
+        text-align: center;
+        border-radius: 6px;
+        padding: 5px 0;
+        position: absolute;
+        z-index: 1;
+        bottom: 150%;
+        left: 50%;
+        margin-left: -60px;
+    }
+    
+    .discountly_tooltip .discountly_tooltiptext::after {
+        content: "";
+        position: absolute;
+        top: 100%;
+        left: 50%;
+        margin-left: -5px;
+        border-width: 5px;
+        border-style: solid;
+        border-color: #312f2f transparent transparent transparent;
+    }
+    
+    .discountly_tooltip:hover .discountly_tooltiptext {
+        visibility: visible;
+    }
+  

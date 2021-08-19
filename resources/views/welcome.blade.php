@@ -6,7 +6,7 @@
     <!-- You are: (shop domain name) -->
     <!-- <p>You are: {{ $shopDomain ?? Auth::user()->name }}</p> -->
     <meta name="csrf-token" content="{{ csrf_token() }}" />
-    <nav class="navbar navbar-light navbar-expand-md">
+    <nav class="navbar navbar-light navbar-expand-md">  
   <div><a class="navbar-brand dis_nav_logo" href="index.html">Discountly</a>
   </div>
   <button data-toggle="collapse" class="navbar-toggler" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span>
@@ -31,14 +31,6 @@
                   <li class="nav-item"><a class="nav-link" href="{{route('discountpromocode')}}">Code Coupen</a></li>
                   <li class="nav-item"><a class="nav-link">
 
-                  @foreach($actives as $active)
-                  
-                      
-                     
-                        <input data-id="{{$active->id}}" class="toggle-class" type="checkbox" data-onstyle="success" data-offstyle="danger" data-toggle="toggle" data-on="Active" data-off="InActive" {{ $active->status ? 'checked' : '' }}>
-                     
-                  
- @endforeach
 
 
                   </a></li>
@@ -160,9 +152,17 @@
      
       let _token   = $('meta[name="csrf-token"]').attr('content');
 // console.log(offername);
+
 // console.log(select);
 // console.log(price);
 
+Swal.fire({
+  position: 'top-end',
+  icon: 'success',
+  title: 'Your work has been saved',
+  showConfirmButton: false,
+  timer: 1500
+})
       $.ajax({
         url: "/discount",
         type:"POST",
@@ -176,6 +176,7 @@
           console.log(response);
           if(response) {
             $('.success').text(response.success);
+
           
           }
         },

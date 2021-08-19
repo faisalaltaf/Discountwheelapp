@@ -5,6 +5,8 @@ use GuzzleHttp\Middleware;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\DiscountController;
 use App\Http\Controllers\ActiveController;
+use App\Http\Controllers\PopupController;
+use App\Http\Controllers\EmaildiscountController;
 
 /*
 |--------------------------------------------------------------------------
@@ -37,5 +39,7 @@ Route::post('/discount','DiscountController@discount')->middleware(['verify.shop
 Route::get('/discountpromocode','DiscountController@showpromocode')->middleware(['verify.shopify'])->name('discountpromocode');
 Route::view('/wheelpop','discountcode.wheeldiscount')->middleware(['verify.shopify'])->name('wheelpop');
 Route::get('/status','ActiveController@index')->middleware('verify.shopify')->name('status');
+Route::get('/emailsend','EmaildiscountController@index')->middleware('verify.shopify')->name('emailsend');
+Route::get('/emaildelete','EmaildiscountController@delete')->middleware('verify.shopify')->name('emaildelete');
 
 Route::get('/changeStatus','ActiveController@changeUserStatus')->middleware('verify.shopify');

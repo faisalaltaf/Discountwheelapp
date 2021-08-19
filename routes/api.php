@@ -2,6 +2,8 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\PopupController;
+use App\Http\Controllers\EmaildiscountController;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,3 +19,10 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+
+Route::get('/popup','PopupController@index');
+Route::get('/show','PopupController@show');
+Route::get('/emailsend','EmaildiscountController@index');
+Route::get('/emaildelete','EmaildiscountController@delete');
+
